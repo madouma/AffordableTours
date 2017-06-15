@@ -5,6 +5,10 @@ import { ApolloClient, createNetworkInterface } from "apollo-client";
 import { ApolloModule } from "apollo-angular";
 
 import { AppComponent } from './app.component';
+import { TopNavigationComponent } from './navigation/top-navigation/top-navigation.component';
+import { MiddleNavigationComponent } from './navigation/middle-navigation/middle-navigation.component';
+import { UtilityNavigationComponent } from './navigation/utility-navigation/utility-navigation.component';
+
 
 const client = new ApolloClient({
     networkInterface: createNetworkInterface({
@@ -18,7 +22,11 @@ export function provideClient(): ApolloClient {
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        TopNavigationComponent,
+        MiddleNavigationComponent,
+        UtilityNavigationComponent,
+
     ],
     imports: [
         BrowserModule,
