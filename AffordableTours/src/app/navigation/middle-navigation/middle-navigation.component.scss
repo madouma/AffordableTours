@@ -1,0 +1,46 @@
+@import '../../../styles/variables.scss';
+nav {
+    //background-color: #333;
+    margin-top: 51px;
+    height: 67px;
+    .nav-pills {
+        float: left;
+        padding: 12px 0;
+        li {
+            text-transform: uppercase;
+            &.active > a{
+                background-color: $orange;
+                color: #fff;
+            }
+            a {
+                color: $primary;
+                font-size: 1.6rem;
+                transition: all .4s ease;
+                letter-spacing: 2.5px;
+                padding: 10px 15px;
+            }
+        }
+    }
+}
+
+.navbar-right {
+    ul {
+        list-style: none;
+        display: grid;
+        margin: 0;
+        padding: 8px 15px;
+        line-height: initial;
+        li {
+            a {
+                font-size: 15px;
+                color: $blue;
+                float: right;
+            }            
+            &:first-of-type {
+                a {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}

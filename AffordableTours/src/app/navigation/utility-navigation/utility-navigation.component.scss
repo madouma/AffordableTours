@@ -1,0 +1,29 @@
+@import '../../../styles/variables.scss';
+nav {
+    background-color: $blue;
+    height: 45px;
+    ul {
+        li {
+            a {
+                color: #fff;
+                &:first-of-type{
+                    padding-left: 0;
+                }
+                &:hover {
+                    background-color: inherit;
+                }                
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    ul {
+        li {
+            a {
+                padding-top: 14px;
+                padding-bottom: 15px;
+            }
+        }
+    }
+}

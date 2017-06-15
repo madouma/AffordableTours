@@ -1,0 +1,21 @@
+@import '../../../styles/variables.scss';
+.navbar {
+    &-nav {
+        li {
+            a {
+                color: $primary;
+                &:hover {
+                    color: $blue;
+                }
+            }
+        }
+    }
+    .navbar-brand {
+        padding: 4px;
+        margin: 0;
+    }
+    &-fixed-top {
+        //background-color: #ccc;
+        margin: 0;
+    }
+}
