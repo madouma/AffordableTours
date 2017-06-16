@@ -1,0 +1,1 @@
+export * from './ratings-and-reviews.component'

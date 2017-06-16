@@ -7,12 +7,15 @@ import { ApolloModule } from 'apollo-angular';
 
 import { routes } from './app.routes';
 
+import { HideOnMobileDirective } from "./shared";
+
 import { AppComponent } from './app.component';
 import { TopNavigationComponent, MiddleNavigationComponent, UtilityNavigationComponent } from './navigation';
 import { BreadcrumbComponent } from './breadcrumb';
 import { HomeComponent } from './home';
 import { CruisesComponent, RiverCruisesComponent } from './cruises';
 import { ResortsComponent } from './resorts';
+import { MissionStatementsComponent, RatingsAndReviewsComponent, SiteMapComponent, FooterComponent } from './footer';
 
 const client = new ApolloClient({
     networkInterface: createNetworkInterface({
@@ -34,7 +37,12 @@ export function provideClient(): ApolloClient {
         HomeComponent,
         CruisesComponent,
         RiverCruisesComponent,
-        ResortsComponent
+        ResortsComponent,
+        RatingsAndReviewsComponent,
+        MissionStatementsComponent,
+        HideOnMobileDirective,
+        FooterComponent,
+        SiteMapComponent
     ],
     imports: [
         BrowserModule,

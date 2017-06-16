@@ -7,4 +7,15 @@ body {
     a:hover {
         text-decoration: none;
     }
+    .marketing {
+        background-color: $ligth-gray;
+        padding: 15px;
+        &__call-us {
+            font-size: 17px;
+            font-weight: 700;
+            span {
+                font-size: 21px;
+            }
+        }
+    }
 }

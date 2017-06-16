@@ -1,0 +1,8 @@
+@import '../../../styles/variables';
+.site-map {
+    &__wrapper {
+        padding: 15px;
+        background-color: $blue;
+        color: #fff;
+    }
+}

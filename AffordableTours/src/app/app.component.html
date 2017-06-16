@@ -1,9 +1,27 @@
-<atours-top-navigation></atours-top-navigation>
-<atours-middle-navigation></atours-middle-navigation>
-<atours-utility-navigation></atours-utility-navigation>
+<header>
+    <atours-top-navigation></atours-top-navigation>
+    <atours-middle-navigation></atours-middle-navigation>
+    <atours-utility-navigation></atours-utility-navigation>
+</header>
 
 <atours-breadcrumb></atours-breadcrumb>
 
 <main class="container">
     <router-outlet></router-outlet>
 </main>
+
+<footer>
+    <div class="marketing" mobileHide=768>
+        <article class="container">
+            <div class="marketing__call-us text-center">
+                Call Us For a Free Quote <span>1-800-627-3753</span>
+            </div>
+            <atours-mission-statements></atours-mission-statements>
+            <atours-ratings-and-reviews></atours-ratings-and-reviews>
+        </article>
+    </div>
+
+    <atours-site-map mobileHide=768></atours-site-map>
+    
+    <atours-footer></atours-footer>
+</footer>

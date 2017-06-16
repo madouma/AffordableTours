@@ -1,0 +1,55 @@
+$padding-vertical: 15px;
+$padding-horizontal: 25px;
+
+.mission-statement {
+    padding: $padding-vertical;
+    section > div {
+        min-height: 125px;
+    }
+}
+
+.common-props {
+    margin-bottom: $padding-vertical;
+    padding: $padding-vertical $padding-horizontal;
+    border: 1px solid rgba(55,55,55,0.15);
+}
+
+.mission-statement {
+    &__left {
+        @extend .common-props;
+        background: rgba(0,124,198,0.15);        
+    }
+    &__right {
+        @extend .common-props;
+        background: rgba(233,174,36,0.15);        
+    }
+}
+
+.statement {
+    min-height: 125px;
+    div {
+        min-height: 125px;
+        &:first-of-type {
+            position: relative;
+            img {
+                // position: absolute;
+                // top: 50%;
+                // left: 50%;
+                // transform: translate(-50%, -50%);
+            }
+        }
+    }
+}
+
+img {
+    height: 65px;
+}
+
+.fi-price-tag {
+    font-size: 2.5rem;
+    color: #FFFFFF;
+    vertical-align: text-top;    
+    &::before{
+        content: "\f19d";        
+    }
+}
