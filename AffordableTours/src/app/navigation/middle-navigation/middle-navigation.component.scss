@@ -8,16 +8,16 @@ nav {
         padding: 12px 0;
         li {
             text-transform: uppercase;
-            &.active > a{
-                background-color: $orange;
-                color: #fff;
-            }
             a {
                 color: $primary;
                 font-size: 1.6rem;
                 transition: all .4s ease;
                 letter-spacing: 2.5px;
                 padding: 10px 15px;
+                &.active {
+                    background-color: $orange;
+                    color: #fff;                    
+                }
             }
         }
     }

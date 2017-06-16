@@ -1,10 +1,10 @@
 <nav>
     <div class="container">
         <ul class="nav nav-pills">
-            <li role="presentation" class="active"><a href="#">Tours</a></li>
-            <li role="presentation"><a href="#">Cruises</a></li>
-            <li role="presentation"><a href="#">River Cruisers</a></li>
-            <li role="presentation"><a href="#">Resorts</a></li>
+            <li role="presentation"><a routerLink="/Tours" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Tours</a></li>
+            <li role="presentation"><a routerLink="/Cruises" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Cruises</a></li>
+            <li role="presentation"><a routerLink="/River-Cruises" routerLinkActive="active">River Cruisers</a></li>
+            <li role="presentation"><a routerLink="/Resorts" routerLinkActive="active">Resorts</a></li>
         </ul>
         <div class="nav navbar-nav navbar-right">
             <ul>

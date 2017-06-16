@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from "@angular/router";
 
-import { ApolloClient, createNetworkInterface } from "apollo-client";
-import { ApolloModule } from "apollo-angular";
+import { ApolloClient, createNetworkInterface } from 'apollo-client';
+import { ApolloModule } from 'apollo-angular';
+
+import { routes } from './app.routes';
 
 import { AppComponent } from './app.component';
 import { TopNavigationComponent, MiddleNavigationComponent, UtilityNavigationComponent } from './navigation';
@@ -35,7 +38,8 @@ export function provideClient(): ApolloClient {
     ],
     imports: [
         BrowserModule,
-        ApolloModule.forRoot(provideClient)
+        ApolloModule.forRoot(provideClient),
+        RouterModule.forRoot(routes)
     ],
     providers: [],
     bootstrap: [AppComponent]
