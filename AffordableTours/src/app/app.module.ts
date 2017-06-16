@@ -5,10 +5,11 @@ import { ApolloClient, createNetworkInterface } from "apollo-client";
 import { ApolloModule } from "apollo-angular";
 
 import { AppComponent } from './app.component';
-import { TopNavigationComponent } from './navigation/top-navigation/top-navigation.component';
-import { MiddleNavigationComponent } from './navigation/middle-navigation/middle-navigation.component';
-import { UtilityNavigationComponent } from './navigation/utility-navigation/utility-navigation.component';
-
+import { TopNavigationComponent, MiddleNavigationComponent, UtilityNavigationComponent } from './navigation';
+import { BreadcrumbComponent } from './breadcrumb';
+import { HomeComponent } from './home';
+import { CruisesComponent, RiverCruisesComponent } from './cruises';
+import { ResortsComponent } from './resorts';
 
 const client = new ApolloClient({
     networkInterface: createNetworkInterface({
@@ -26,7 +27,11 @@ export function provideClient(): ApolloClient {
         TopNavigationComponent,
         MiddleNavigationComponent,
         UtilityNavigationComponent,
-
+        BreadcrumbComponent,
+        HomeComponent,
+        CruisesComponent,
+        RiverCruisesComponent,
+        ResortsComponent
     ],
     imports: [
         BrowserModule,
