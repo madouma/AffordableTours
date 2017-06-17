@@ -1,0 +1,93 @@
+$facebook: #3B5998;
+$google: #DD4B39;
+$linkedin: #007BB6;
+$pinterest: #CB2027;
+$tumblr: #2c4762;
+$twitter: #55ACEE;
+$atours: #006baa;
+
+.footer {
+    &__wrapper {
+        padding: 15px 0 22px 0;
+    }
+
+    &__logo {
+        height: 35px;
+        .navbar-brand {
+            padding: 0;
+            height: initial;
+            height: inherit;
+            img {
+                height: 100%;
+            }
+        }
+        small {
+            position: absolute;
+            left: 13px;
+            top: 33px;
+            font-size: 10px;
+            letter-spacing: 1.01px;
+        }
+    }
+
+    &__hours {
+        ul {
+            padding: 0;
+            margin: 4px 0 0 0;
+            text-transform: uppercase;
+            li {
+                list-style: none;
+            }
+        }
+    }
+
+    &__social {
+        ul {
+            margin: 7px 0;
+            padding: 0;
+            li {
+                list-style: none;
+                display: inline-block;
+                .fa {
+                    color: #fff;
+                }
+                .btn {
+                    border-radius: 0;
+                    margin: 0 3px;
+                    width: 30px;
+                    height: 30px; 
+                    padding: 4px;                   
+                    &-twitter {
+                        background-color: $twitter;
+                    }
+                    &-facebook {
+                        background-color: $facebook;
+                    }   
+                    &-youtube {
+                        background-color: $google;
+                    }  
+                    &-google {
+                        background-color: $google;
+                    }   
+                    &-linkedin {
+                        background-color: $linkedin;
+                    }    
+                    &-pinterest {
+                        background-color: $pinterest;
+                    }
+                    &-tumblr {
+                        background-color: $tumblr;
+                    } 
+                    &-atours {
+                        padding: 0;
+                        margin-top: -2px;
+                        img {
+                            width: inherit;
+                            height: inherit;
+                        }
+                    }                                                                                                                            
+                }
+            }
+        }        
+    }
+}
