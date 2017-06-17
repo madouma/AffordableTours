@@ -1,5 +1,6 @@
 <!-- Fixed navbar -->
-<nav class="navbar navbar-fixed-top"> <!-- Add .croll class for shadow effect -->
+<nav class="navbar navbar-fixed-top" [class.scroll]="scrolling">
+    <!-- Add .croll class for shadow effect -->
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" aria-expanded="false" aria-controls="navbar">
@@ -12,8 +13,9 @@
                 <img src="assets/atoursLogo.png" alt="AffordableTours.com">
             </a>
         </div>
+
         <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right" *ngIf="!scrolling">
                 <li><a href="//cruises.affordabletours.com/?src=header_nav">Home</a></li>
                 <li class="dropdown">
                     <a href="#">About <span class="caret"></span></a>
@@ -21,8 +23,17 @@
                 <li><a href="//blog.affordabletours.com/?src=header_about">Blog</a></li>
                 <li><a href="#">Cruise Info <span class="caret"></span></a></li>
                 <li><a href="//my.affordabletours.com/?src=header_nav">Login</a></li>
-                <li><a href="//cruises.affordabletours.com/Info/LowestPrice/?src=header_nav">Low Price Guarantee</a></li>        
+                <li><a href="//cruises.affordabletours.com/Info/LowestPrice/?src=header_nav">Low Price Guarantee</a></li>
             </ul>
+
+            <div class="contact-message" *ngIf="scrolling">
+                Call Us For a Free Quote <span>1-800-627-3753</span>
+            </div>
+
+            <div class="pull-right links" *ngIf="scrolling">
+                <a href="#">Call Me</a> | <a href="//www.affordabletours.com/help.php?s=cruiseshelp" target="_blank">Help</a>
+            </div>
         </div>
-    </div> <!-- /container -->
+    </div>
+    <!-- /container -->
 </nav>

@@ -1,10 +1,12 @@
+@import '../../../styles/variables.scss';
+
 $padding-vertical: 15px;
 $padding-horizontal: 25px;
 
 .mission-statement {
     padding: $padding-vertical;
     section > div {
-        min-height: 125px;
+        min-height: 271px;
     }
 }
 
@@ -26,17 +28,52 @@ $padding-horizontal: 25px;
 }
 
 .statement {
-    min-height: 125px;
-    div {
-        min-height: 125px;
-        &:first-of-type {
-            position: relative;
-            img {
-                // position: absolute;
-                // top: 50%;
-                // left: 50%;
-                // transform: translate(-50%, -50%);
+    //min-height: 125px;
+    //margin-bottom: $padding-horizontal;
+    display: flex;
+    margin-bottom: 12px;
+    &__icon, &__content {
+        float: left;
+    }
+
+    &__icon {
+        margin-right: 20px;
+        padding-top: 4px;
+    }
+
+    h4 {
+        text-transform: uppercase;
+        color: $blue;
+    }
+
+    &__content {
+        width: 81%;
+        ul {
+            padding: 0;
+            margin-bottom: 4px;
+            li {
+                list-style: none;
+                color: $blue;
+                font-size: 13.5px;
+                a {
+                    color: inherit;
+                }
             }
+        }
+        & > div {
+            margin-bottom: 4px;
+        }
+        &--more {
+            color: $orange;
+            font-size: 16px;
+        }
+        input {
+            border-radius: 0;
+        }
+        .btn {
+            background-color: $orange;
+            color: #fff;
+            text-transform: uppercase;
         }
     }
 }
