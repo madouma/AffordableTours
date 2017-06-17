@@ -4,5 +4,31 @@
         padding: 15px;
         background-color: $blue;
         color: #fff;
+
+        h3 {
+            margin-top: 0;
+            text-transform: uppercase;
+            font-size: inherit;
+            font-weight: 700;
+        }
+
+        ul {
+            padding: 0;
+            list-style: none;
+            li {
+                a{
+                    color: #fff;
+                    &:hover {
+                        color: $orange;
+                    }
+                } 
+            }
+        }        
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .col-lg-2 {
+        width: 18.6%;
     }
 }
