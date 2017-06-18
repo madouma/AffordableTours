@@ -1,0 +1,247 @@
+@import '../../../styles/variables.scss';
+
+h1 {
+    text-align: left;
+    padding-bottom: 0;
+    margin-top: 4px;
+    font-weight: 300;
+    color: $blue;
+    text-transform: uppercase;    
+}
+
+label {
+    font-weight: normal;
+    font-size: 13px;
+}
+
+input, select {
+    border-radius: 0;
+}
+
+.destination {
+    &__blurb {
+        font-size: 15.65px;
+        margin-bottom: 2%;
+        h3 {
+            margin-top: 9px;
+        }
+
+        &--description {
+            padding-right: 40px;
+            a {
+                color: $orange;
+            }
+        }
+
+        &--photo-section {
+            margin-left: -30px;
+            img {
+                max-height: 163px;
+            }
+        }
+    }
+}
+
+.content-with-sidebar {
+    font-size: 14.5px;
+    .sidebar {
+        float: left;
+        width: 26%;
+        padding-right: 2%;
+        font-size: 13x;
+        .form {
+            &__wrapper {
+                border-style: solid;
+                border-width: 1px;
+                border-color: #d8d8d8;
+                margin-bottom: 1.25rem;
+                padding: 20px;
+                background: #f2f2f2;
+                color: #333333;  
+
+                h2 {
+                    margin-top: 0;
+                    font-size: 25px;
+                    text-transform: uppercase;
+                }      
+            }
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+            label {
+                input {
+                    margin-top: 3.7px;
+                }
+                .fa {
+                    font-size: 11px;
+                    vertical-align: super;                        
+                }
+            }                       
+        }
+
+        .btn {
+            background-color: $orange;
+            color: #fff;
+            text-transform: uppercase;
+            margin-top: 5px;
+            padding: 6px 12px;
+            border-radius: 0;
+            span {
+                margin-right: 6px;
+                margin-top: 2px;
+            }
+        }
+    }
+
+    .content {
+        float: left;
+        width: 69%;
+        padding-left: 2%;
+
+        table {
+            width: 100%;
+            border-collapse: collapse; 
+            font-size: 13.5px;
+            thead {
+                background-color: $blue;
+                color: #fff;
+                font-weight: normal;
+                tr {
+                    th {
+                        &:nth-of-type(1) {
+                            width: 12%
+                        }
+                        &:nth-of-type(2) {
+                            width: 12%
+                        }
+                        &:nth-of-type(3) {
+                            
+                        }
+                        &:nth-of-type(4) {
+                            
+                        }
+                        &:nth-of-type(5) {
+                            
+                        }
+                        &:nth-of-type(6) {
+                            
+                        }
+                        &:nth-of-type(7) {
+                            
+                        }
+                        &:nth-of-type(8) {
+                            width: 10%;
+                        }                    
+                    }
+                }
+            }
+
+            td, th { 
+                padding: 14px 6px; 
+                text-align: center; 
+                font-weight: normal;
+            }
+
+            tbody {
+                td {
+                    cursor: pointer;
+                    &.date, &.price {
+                        color: $deep-blue;
+                    }
+
+                    &.price {
+                        font-size: 1.3em;
+                    }
+                }
+            }
+        }
+    }
+} 
+
+@media only screen and (min-width: 42.0625em) {
+    h1 {
+        font-size: 41px;
+    }
+}
+
+@media only screen and (max-width: 760px), 
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        border: 1px solid #ccc;
+    }
+
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        //border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50% !important;
+        &:before {
+            /* Now like a table header */
+            position: absolute;
+            /* Top/left values mimic padding */
+            top: 14px;
+            left: 14px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap;
+        }
+
+        /* Label the data */
+        &:nth-of-type(1):before {
+            content: "Sail Date";
+        }
+        &:nth-of-type(2):before {
+            content: "Cruise Line";
+        }
+        &:nth-of-type(3):before {
+            content: "Ship";
+        }
+        &:nth-of-type(4):before {
+            content: "Destination";
+        }
+        &:nth-of-type(5):before {
+            content: "Departs";
+        }
+        &:nth-of-type(6):before {
+            content: "Length";
+        }
+        &:nth-of-type(7):before {
+            content: "Price";
+        }
+        &:nth-of-type(8):before {
+            content: "You Save";
+        }
+    }
+
+    .table > tbody > tr > td {
+        border: none;
+        text-align: left !important;
+        line-height: 1;
+    }
+
+    .content-with-sidebar {
+        .content, .sidebar {
+            width: 100%;
+        }        
+        .content {
+            .form-group {
+                width: 100%;
+            }
+        }
+    }
+}

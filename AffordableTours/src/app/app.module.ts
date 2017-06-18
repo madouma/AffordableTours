@@ -18,11 +18,24 @@ import { CruisesComponent, RiverCruisesComponent } from './cruises';
 import { ResortsComponent } from './resorts';
 import { MissionStatementsComponent, RatingsAndReviewsComponent, SiteMapComponent, FooterComponent } from './footer';
 
+const networkInterface = createNetworkInterface('https://43skynpam2.execute-api.us-east-1.amazonaws.com/devmarc/graphql');
+
+networkInterface.use([{
+    applyMiddleware(req, next) {
+        if (!req.options.headers) {
+            req.options.headers = {
+                'x-api-key': 'RaDmGseNJQ1ejKNPyK0MO4BrbUN8aID3a6vu4CcF'
+            };  // Create the header object if needed.
+        }
+        // get the authentication token from local storage if it exists
+        req.options.headers.authorization = localStorage.getItem('token') || null;
+        next();
+    }
+}]);
+
 const client = new ApolloClient({
-    networkInterface: createNetworkInterface({
-        uri: 'https://43skynpam2.execute-api.us-east-1.amazonaws.com/devmarc'
-    })
-})
+    networkInterface
+});
 
 export function provideClient(): ApolloClient {
     return client;

@@ -5,7 +5,7 @@ import { HomeComponent, CruisesComponent, RiverCruisesComponent, ResortsComponen
 export const routes: Routes = [
     { path: '', redirectTo: 'Tours', pathMatch: 'full' },
     { path: 'Tours', component: HomeComponent },
-    { path: 'Cruises', component: CruisesComponent },
+    { path: 'Cruises/Alaska', component: CruisesComponent },
     { path: 'River-Cruises', component: RiverCruisesComponent },    
     { path: 'Resorts', component: ResortsComponent }
 ]
