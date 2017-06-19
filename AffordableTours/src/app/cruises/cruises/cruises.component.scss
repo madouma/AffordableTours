@@ -109,6 +109,7 @@ input, select {
                 font-weight: normal;
                 tr {
                     th {
+                        padding: 18px 6px; 
                         &:nth-of-type(1) {
                             width: 12%
                         }
@@ -138,7 +139,6 @@ input, select {
             }
 
             td, th { 
-                padding: 10px 6px; 
                 text-align: center; 
                 font-weight: normal;
             }
@@ -146,8 +146,9 @@ input, select {
             tbody {
                 td {
                     cursor: pointer;
+                    padding: 10px 6px; 
                     &.date, &.price {
-                        color: $deep-blue;
+                        color: $blue;
                     }
 
                     &.price {

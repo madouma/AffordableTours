@@ -11,7 +11,7 @@ import { ApolloModule } from 'apollo-angular';
 
 import { routes } from './app.routes';
 
-import { HideOnMobileDirective, DataService, CustomDialogComponent } from "./shared";
+import { HideOnMobileDirective, DataService, CustomDialogComponent, ShoppingCartComponent } from "./shared";
 
 import { AppComponent } from './app.component';
 import { TopNavigationComponent, MiddleNavigationComponent, UtilityNavigationComponent } from './navigation';
@@ -60,7 +60,8 @@ export function provideClient(): ApolloClient {
         HideOnMobileDirective,
         FooterComponent,
         SiteMapComponent,
-        CustomDialogComponent
+        CustomDialogComponent,
+        ShoppingCartComponent
     ],
     imports: [
         BrowserModule,

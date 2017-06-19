@@ -88,7 +88,8 @@ export class CruisesComponent implements OnInit {
         });
     }
 
-    onPackageSelection(cruise: any) {
+    onPackageSelection(index, cruise: any) {
+        //alert(index);
         this.selectedPackage = cruise;
 
         this._dataStore.update(cruise);

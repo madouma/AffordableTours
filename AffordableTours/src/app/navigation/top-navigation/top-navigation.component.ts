@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, HostListener } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 
 import { ICruise } from '../../cruises';
@@ -10,22 +10,10 @@ import { DataService } from '../../shared';
 	styleUrls: ['./top-navigation.component.scss']
 })
 export class TopNavigationComponent implements OnInit {
-    private scrolling: boolean = false;
-    cruise: ICruise;
-    showDialog = false;
+    @Input() scrolling: boolean = false;
 
-	constructor( 
-        @Inject(DOCUMENT) private document: Document,
-        private _dataService: DataService
-    ) { }
+	constructor() { }
 
 	ngOnInit() {
-        this._dataService.cruise.subscribe( data => this.cruise = data );
 	}
-
-    @HostListener('window:scroll', ['$event'])
-    onWindowScroll() {
-        this.scrolling = this.document.body.scrollTop ? true : false; 
-    }
-
 }

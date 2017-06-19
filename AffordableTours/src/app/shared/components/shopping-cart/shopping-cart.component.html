@@ -1,0 +1,41 @@
+<div class="shopping-cart link" [class.on-page]="section === 'page'" *ngIf="(scrolling && cruise) || (section === 'page' && cruise)">
+    <a (click)="showDialog = !showDialog"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> View Cart </a>
+</div>
+
+<atours-custom-dialog [(visible)]="showDialog">
+    <div class="shopping-cart">
+        <header>
+            <a href="//cruises.affordabletours.com/">
+                <img src="assets/atoursLogo.png" alt="AffordableTours.com">
+            </a>
+            <h3 class="shopping-cart__header">Shopping Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></h3>
+        </header>
+        <article class="shopping-cart__body">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <section>
+                        <img src="//img.affordabletours.com/img/geo/cruises/destination/2__201510011028__.jpg" alt="">
+                    </section>
+                    <section>
+                        <h4>{{cruise?.cruiseLine}} <span>{{cruise?.cost | currency:'USD':true:'1.2-2'}}</span></h4>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div><label>Sail date: </label>{{cruise?.sailDate | date}}</div>
+                                <div><label>Ship: </label>{{cruise?.ship}}</div>
+                                <div><label>Destination: </label>{{cruise?.destination}}</div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div><label>Port: </label>{{cruise?.portName}}</div>
+                                <div><label>Duration: </label>{{cruise?.nights}}</div>
+                                <div *ngIf="cruise && cruise.discount && cruise.discount > 0"><label>You save: </label> <span class="red">{{cruise.discount}}%</span></div>                                
+                            </div>    
+                        </div>
+                    </section>
+                </li>
+            </ul>
+        </article>
+        <footer>
+            <button (click)="showDialog = !showDialog" class="btn">Close</button>
+        </footer>
+    </div>
+</atours-custom-dialog>

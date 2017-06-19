@@ -138,11 +138,14 @@
         <h3>All Alaska Cruises</h3>
 
         <div class="row">
-            <div class="form-group col-xs-6">
+            <div class="form-group col-sm-6 col-xs-10">
                 <label for="sorter" class="control-label">Sort By </label>
                 <select [(ngModel)]="sortVal" name="sorter" (ngModelChange)="sort()" class="form-control">
                     <option *ngFor="let sort of sortOptions" [ngValue]="sort.val">{{sort.name}}</option>
                 </select>                
+            </div>
+            <div class="col-sm-6 col-xs-2">
+                <atours-shopping-cart [section]="'page'"></atours-shopping-cart>
             </div>
         </div>
 
@@ -162,7 +165,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let cruise of cruises; let i = index" (click)="onPackageSelection(cruise)">
+                        <tr *ngFor="let cruise of cruises; let i = index" (click)="onPackageSelection(i, cruise)">
                             <td class="date">{{cruise.sailDate | date}}</td>
                             <td>{{cruise.cruiseLine}}</td>
                             <td>{{cruise.ship}}</td>
@@ -177,7 +180,7 @@
                             </ng-template>
                             <ng-template #elseBlock>
                                 <td mobileHide=768></td>
-                            </ng-template>    
+                            </ng-template>
                         </tr>
                     </tbody>
                 </table>
