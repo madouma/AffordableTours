@@ -140,15 +140,9 @@
         <div class="row">
             <div class="form-group col-xs-6">
                 <label for="sorter" class="control-label">Sort By </label>
-                <select name="sorter" id="sorter" class="form-control">
-                    <option value="1">Cruise Line</option>
-                    <option value="3">Departure Port</option>
-                    <option value="7">Destination</option>
-                    <option value="4">Length (Short to Long)</option>
-                    <option value="6">Price (Low to High)</option>
-                    <option value="0" selected="selected">Sail Date</option>
-                    <option value="2">Ship</option>
-                </select>
+                <select [(ngModel)]="sortVal" name="sorter" (ngModelChange)="sort()" class="form-control">
+                    <option *ngFor="let sort of sortOptions" [ngValue]="sort.val">{{sort.name}}</option>
+                </select>                
             </div>
         </div>
 
@@ -176,7 +170,14 @@
                             <td>{{cruise.portName}}</td>
                             <td>{{cruise.nights}}</td>
                             <td class="price">{{cruise.cost | currency : 'USD':true:'1.0'}}</td>
-                            <td class="red" *ngIf="cruise.discount && cruise.discount > 0">{{cruise.discount}}%</td>
+
+                            <div *ngIf="cruise.discount && cruise.discount > 0; then thenBlock; else elseBlock">this is ignored</div>
+                            <ng-template #thenBlock>
+                                <td class="red">{{cruise.discount}}%</td>
+                            </ng-template>
+                            <ng-template #elseBlock>
+                                <td mobileHide=768></td>
+                            </ng-template>    
                         </tr>
                     </tbody>
                 </table>

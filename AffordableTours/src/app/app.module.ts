@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { NgModule } from '@angular/core';
-import { HttpModule } from "@angular/http";
 import { RouterModule } from "@angular/router";
 
 import { ApolloClient, createNetworkInterface } from 'apollo-client';
@@ -8,7 +11,7 @@ import { ApolloModule } from 'apollo-angular';
 
 import { routes } from './app.routes';
 
-import { HideOnMobileDirective } from "./shared";
+import { HideOnMobileDirective, DataService, CustomDialogComponent } from "./shared";
 
 import { AppComponent } from './app.component';
 import { TopNavigationComponent, MiddleNavigationComponent, UtilityNavigationComponent } from './navigation';
@@ -56,15 +59,18 @@ export function provideClient(): ApolloClient {
         MissionStatementsComponent,
         HideOnMobileDirective,
         FooterComponent,
-        SiteMapComponent
+        SiteMapComponent,
+        CustomDialogComponent
     ],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         HttpModule,
+        FormsModule,
         ApolloModule.forRoot(provideClient),
         RouterModule.forRoot(routes)
     ],
-    providers: [],
+    providers: [DataService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
