@@ -246,3 +246,11 @@ input, select {
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .destination__blurb--photo-section {
+        img {
+            display: none;
+        }
+    }
+}

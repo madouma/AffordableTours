@@ -44,3 +44,43 @@ nav {
         }
     }
 }
+
+@media screen and (max-width: 853px) {
+    .navbar-right {
+        ul {
+            width: 239px;
+            position: absolute;
+            right: 0;
+            top: 6px;            
+            li {
+                a {
+                    display: none;
+                }            
+                &:first-of-type {
+                    a {
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        right: 13px;
+                        z-index: 1031;
+                        font-size: 19px;
+                        padding: 10px;                        
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 578px) {
+    nav {
+        .nav-pills {
+            li {
+                a {
+                    font-size: 1rem;
+                    padding: 7px 8px;
+                }
+            }
+        }
+    }
+}
